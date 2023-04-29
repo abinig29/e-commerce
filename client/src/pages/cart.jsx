@@ -1,9 +1,12 @@
 import React from 'react'
+import Header from '../components/static/header'
+import Location from '../components/static/location'
 
 const Cart = () => {
     return (
         <div>
-            cart
+            <Header />
+            <Location where={["/Product", '']} />
         </div>
     )
 }

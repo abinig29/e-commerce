@@ -11,12 +11,14 @@ import About from "./pages/about";
 import Product from "./pages/product";
 import ProductDetail from "./pages/productDetail";
 import Layout from "./layout/layout";
+import Login from "./pages/login";
 
 const App = () => {
   return (
     <div>
       <Router>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Layout />} >
             <Route index element={<Navigate to="home" />} />
             <Route exact path="home" element={<Home />} />

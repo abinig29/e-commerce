@@ -8,14 +8,14 @@ const About = () => {
     return (
         <div>
             <Header />
-            <Location where={"/About"} />
+            <Location where={["/About", '']} />
             <main className='lg:max-w-[1280px] w-full mx-auto px-8 py-10 ' >
-                <div className='flex gap-8'>
-                    <div className='flex-1 px-10' >
+                <div className='flex gap-8 flex-col md:flex-row'>
+                    <div className='flex-1 md:px-10' >
                         <img src={hero1} alt="" className='w-full h-[500px] object-cover rounded' />
                     </div>
                     <div className='flex-1'>
-                        <h3 className='font-poppins inline-block relative text-[35px] font-bold before:contents-[] before:absolute before:h-1 before:w-[50%] before:bg-background1 before:-bottom-3 '>Our History</h3>
+                        <h3 className='font-poppins inline-block relative text-[35px] font-bold before:contents-[] before:absolute before:h-1 before:w-[50%] before:bg-background1 before:-bottom-3 before:rounded-full '>Our History</h3>
                         <p className='mt-10 -tracking-tighter text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                             Fugiat accusantium sapiente tempora sed dolore esse
                             deserunt eaque excepturi, delectus error accusamus

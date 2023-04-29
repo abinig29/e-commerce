@@ -7,8 +7,8 @@ import sofa3 from "../assets/sofa3.jpg"
 
 import { GiCompass, GiBatteredAxe } from 'react-icons/gi'
 import { TfiWrite } from 'react-icons/tfi'
-import { FiSearch } from 'react-icons/fi'
 import Header from '../components/static/header'
+import Card from '../components/card'
 
 
 const Home = () => {
@@ -43,36 +43,9 @@ const Home = () => {
                 <div className='lg:max-w-[1280px] w-full mx-auto px-8 py-10 flex flex-col items-center gap-4'>
                     <h4 className="font-bold relative text-5xl text-center before:absolute before:w-20 before:left-[50%] before:-translate-x-[50%] before:bg-primary before:-bottom-5 before:h-1 ">Featured Products</h4>
                     <div className='grid lg:grid-cols-3 mt-20 gap-8 sm:grid-cols-2  w-full'>
-                        <div className='card relative'>
-                            <img src={sofa1} alt="sofa1" className='rounded h-[250px] w-full object-cover transition-all duration-500' />
-                            <div className="flex items-center justify-between mt-2">
-                                <h5 className="font-poppins text-gray-600 tracking-widest">Entertainment Center</h5>
-                                <span className="text-primary">$599.99</span>
-                            </div>
-                            <span className="search absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-font_color p-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out ">
-                                <FiSearch size={'30px'} style={{ color: "white" }} />
-                            </span>
-                        </div>
-                        <div className='card relative'>
-                            <img src={sofa2} alt="sofa1" className='rounded h-[250px] w-full object-cover transition-all duration-500' />
-                            <div className="flex items-center justify-between mt-2">
-                                <h5 className="font-poppins text-gray-600 tracking-widest">High-Back Bench</h5>
-                                <span className="text-primary">$599.99</span>
-                            </div>
-                            <span className="search absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-font_color p-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out ">
-                                <FiSearch size={'30px'} style={{ color: "white" }} />
-                            </span>
-                        </div>
-                        <div className='card relative'>
-                            <img src={sofa3} alt="sofa1" className='rounded h-[250px] w-full object-cover transition-all duration-500' />
-                            <div className="flex items-center justify-between mt-2">
-                                <h5 className="font-poppins text-gray-600 tracking-widest">Modern Bookshelf</h5>
-                                <span className="text-primary">$599.99</span>
-                            </div>
-                            <span className="search absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-font_color p-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out ">
-                                <FiSearch size={'30px'} style={{ color: "white" }} />
-                            </span>
-                        </div>
+                        <Card img={sofa1} price={"$599.99"} name={'Entertainment Center'} />
+                        <Card img={sofa2} price={"$599.99"} name={'High-Back Bench'} />
+                        <Card img={sofa3} price={"$599.99"} name={'Modern Bookshelf'} />
                     </div>
                     <button className="bg-primary rounded-md px-4 py-2 shadow-sm font-semibold text-white mt-6">All product</button>
                 </div>

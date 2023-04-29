@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&family=Poppins:ital,wght@0,400;0,500;1,200;1,300&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+@layer {
+  .underline_decor {
+    @apply relative hover:before:absolute hover:before:-bottom-1 hover:before:w-full hover:before:h-1 hover:before:bg-primary before:transition-all before:duration-300;
+  }
+  .search {
+    @apply opacity-0;
+  }
+  .card:hover .search {
+    @apply opacity-100;
+  }
+  .card:hover img {
+    @apply opacity-50;
+  }
+}

@@ -5,11 +5,19 @@ import { FaUserAlt } from "react-icons/fa"
 import { HiMenu } from "react-icons/hi"
 import { GrClose } from "react-icons/gr"
 import logo from "../../assets/logo.svg"
+import { useNavigate } from 'react-router-dom'
+import useCartContext from '../../customHook/cartUseContext'
 
 
 
 const Header = () => {
     const [open, setOpen] = useState(true)
+    const navigate = useNavigate()
+    const handleRoute = () => {
+        navigate('/cart')
+    }
+    const { total } = useCartContext()
+
     return (
         <div className='lg:max-w-[1280px] w-full mx-auto'>
             <nav className='flex items-center justify-between py-4 px-6'>
@@ -20,15 +28,15 @@ const Header = () => {
                     <NavLink className={'underline_decor'} to="/product"> Product </NavLink>
                 </ul>
                 <div className='text-[20px]  items-center gap-6 md:flex hidden' >
-                    <button className='flex relative items-center  gap-2'>
+                    <button className='flex relative items-center  gap-2' onClick={handleRoute}>
                         Cart
                         <h5 className='relative'><BsFillCartFill size={"25px"} />
                             <span className='absolute -top-2 -right-4 bg-primary rounded-full w-6 h-6 flex justify-center items-center'>
-                                <p className='text-white text-sm'>5</p>
+                                <p className='text-white text-sm'>{total}</p>
                             </span>
                         </h5>
                     </button>
-                    <button className='flex  items-center gap-2'>
+                    <button className='flex  items-center gap-2' onClick={() => navigate("/login")}>
                         <p>Login</p>
                         <span><FaUserAlt size={"25px"} /></span>
 
@@ -51,7 +59,7 @@ const Header = () => {
                             <NavLink className={'underline_decor'} to="/product"> Product </NavLink>
                         </ul>
                         <div className='text-[20px]  items-center justify-center gap-6 flex mt-10 ' >
-                            <button className='flex relative items-center  gap-2'>
+                            <button className='flex relative items-center  gap-2' onClick={handleRoute}>
                                 Cart
                                 <h5 className='relative'><BsFillCartFill size={"25px"} />
                                     <span className='absolute -top-2 -right-4 bg-primary rounded-full w-6 h-6 flex justify-center items-center'>

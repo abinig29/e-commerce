@@ -23,4 +23,19 @@
   .under {
     @apply relative before:absolute before:-bottom-1 before:w-[100%] before:h-[2px] before:bg-primary;
   }
+  .blue {
+    @apply bg-[#3131ff];
+  }
+  .green {
+    @apply bg-[#00ff00];
+  }
+  .yellow {
+    @apply bg-[#ffba03];
+  }
+  .black {
+    @apply bg-[#0c0c0c];
+  }
+  .red {
+    @apply bg-[#ff0000];
+  }
 }

@@ -12,10 +12,17 @@ export const productReducer = (state, action) => {
       return { ...state, selectedProduct };
     case "filter":
       let newProducts;
-      if (action.payload.selectedItem === "All") {
+      if (action.payload.search === "") {
         newProducts = products;
       } else {
-        newProducts = products.filter(
+        newProducts = products.filter((Product) =>
+          Product.name.toLowerCase().includes(action.payload.search)
+        );
+      }
+      if (action.payload.selectedItem === "All") {
+        newProducts = newProducts;
+      } else {
+        newProducts = newProducts.filter(
           (Product) => Product.itemType === action.payload.selectedItem
         );
       }

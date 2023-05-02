@@ -9,9 +9,13 @@ import { GiCompass, GiBatteredAxe } from 'react-icons/gi'
 import { TfiWrite } from 'react-icons/tfi'
 import Header from '../components/static/header'
 import Card from '../components/card'
+import useProductContext from '../customHook/productUseContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const Home = () => {
+    const { products } = useProductContext()
+    const navigate = useNavigate()
     return (
         <div className="bg-white">
             <Header />
@@ -26,7 +30,7 @@ const Home = () => {
                                 Ad laborum, consequuntur quod architecto nulla repudiandae esse neque,
                                 delectus consequatur veritatis .
                             </p>
-                            <button className="bg-primary rounded-md px-6 py-3 shadow-sm font-semibold text-white">SHOP NOW</button>
+                            <button onClick={() => navigate("/product")} className={`font-poppins border-none px-4 p-1  bg-[#ab7a5f] rounded text-white shadow-md  hover:bg-[#d5bcaf] hover:text-black transition-all duration-500`}>SHOP NOW</button>
                         </div>
                         <div className='flex-1'>
                             <div className="relative hidden md:block">
@@ -43,11 +47,12 @@ const Home = () => {
                 <div className='lg:max-w-[1280px] w-full mx-auto px-8 py-10 flex flex-col items-center gap-4'>
                     <h4 className="font-bold relative text-5xl text-center before:absolute before:w-20 before:left-[50%] before:-translate-x-[50%] before:bg-primary before:-bottom-5 before:h-1 ">Featured Products</h4>
                     <div className='grid lg:grid-cols-3 mt-20 gap-8 sm:grid-cols-2  w-full'>
-                        <Card img={sofa1} price={"$599.99"} name={'Entertainment Center'} />
-                        <Card img={sofa2} price={"$599.99"} name={'High-Back Bench'} />
-                        <Card img={sofa3} price={"$599.99"} name={'Modern Bookshelf'} />
+                        {
+                            products.slice(0, 3).map(item => <Card id={item.id} img={item.img} price={item.price} name={item.name} />)
+                        }
+
                     </div>
-                    <button className="bg-primary rounded-md px-4 py-2 shadow-sm font-semibold text-white mt-6">All product</button>
+                    <button onClick={() => navigate("/product")} className={`font-poppins border-none px-4 p-1  bg-[#ab7a5f] rounded text-white shadow-md  hover:bg-[#d5bcaf] hover:text-black transition-all duration-500`}>All product</button>
                 </div>
             </section>
             <section className="bg-background1 lg:h-[400px] md:h-[900px]">
@@ -73,7 +78,7 @@ const Home = () => {
                                 <GiBatteredAxe size={'25px'} />
                             </div>
                             <p className='font-bold text-[20px]'>
-                                Mission
+                                Vision
                             </p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis.</p>
                         </div>
@@ -82,7 +87,7 @@ const Home = () => {
                                 <TfiWrite size={'25px'} />
                             </div>
                             <p className='font-bold text-[20px]'>
-                                Mission
+                                History
                             </p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis.</p>
                         </div>

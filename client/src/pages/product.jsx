@@ -14,6 +14,7 @@ const Product = () => {
     const [selectedItem, setSelectedItem] = useState("All")
     const [selectedColor, setSelectedColor] = useState("All")
     const [selectedCampany, setSelectedCampany] = useState("All")
+    const [search, setSearch] = useState("")
     const { products, dispatch, displayMode } = useProductContext()
 
     const handleCancle = () => {
@@ -21,13 +22,14 @@ const Product = () => {
         setSelectedItem("All")
         setSelectedColor('All')
         setSelectedCampany("All")
+        setSearch("")
     }
     const handleDispalyType = (typeOf) => {
         dispatch({ type: "setDisplayMode", payload: typeOf })
     }
     useEffect(() => {
-        dispatch({ type: 'filter', payload: { selectedColor, selectedItem, selectedCampany } })
-    }, [selectedColor, selectedItem, selectedCampany])
+        dispatch({ type: 'filter', payload: { selectedColor, selectedItem, selectedCampany, search } })
+    }, [selectedColor, selectedItem, selectedCampany, search])
 
     return (
         <div>
@@ -37,7 +39,7 @@ const Product = () => {
 
                 <div className='flex sm:flex-row flex-col gap-20 '>
                     <div className=''>
-                        <input type="text" className="border-none bg-[rgba(130,130,126,0.14)] px-4 py-[8px] rounded-lg" placeholder='Search' />
+                        <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" className="border-none bg-[rgba(130,130,126,0.14)] px-4 py-[8px] rounded-lg" placeholder='Search' />
                         <div className='flex flex-col gap-3 mt-6 items-start'>
                             <h2 className='font-bold tracking-wide font-poppins'>Catagory</h2>
                             {

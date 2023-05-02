@@ -11,9 +11,12 @@ const intialValue = {
 
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(cartReducer, intialValue);
+
     useEffect(() => {
         const cartItem = JSON.parse(localStorage.getItem("cartItem"))
-        if (cartItem) dispatch({ type: "all", payload: cartItem })
+        if (cartItem) {
+            dispatch({ type: "all", payload: cartItem })
+        }
     }, [])
     useEffect(() => {
         dispatch({ type: "calTotal" })

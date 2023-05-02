@@ -30,7 +30,7 @@ const App = () => {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/" element={<Layout />} >
             <Route index element={<Navigate to="home" />} />
             <Route exact path="home" element={<Home />} />

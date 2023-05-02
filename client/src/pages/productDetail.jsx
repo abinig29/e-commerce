@@ -21,7 +21,7 @@ const ProductDetail = () => {
 
     const handleAddToCart = () => {
         const cartId = Date.now().toString()
-        const cart = { id: cartId, productId: id, img: selectedProduct.img, subTotal: selectedProduct.price, price: selectedProduct.price, amount: selectedNumber, color: selectedColor }
+        const cart = { id: cartId, name: selectedProduct.name, productId: id, img: selectedProduct.img, subTotal: (selectedProduct.price * selectedNumber).toFixed(2), price: selectedProduct.price, amount: selectedNumber, color: selectedColor }
         dis({ type: 'add', payload: cart })
         setCartAdded(true)
         navigate('/cart')

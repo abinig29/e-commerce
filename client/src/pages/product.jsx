@@ -117,13 +117,8 @@ const Product = () => {
                                     }
                                 </div>
                         }
-
-
-
                     </div>
-
                 </div>
-
             </main >
         </div >
     )

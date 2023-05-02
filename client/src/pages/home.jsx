@@ -1,16 +1,15 @@
 import React from 'react'
 import hero1 from "../assets/hero-1.jpeg"
 import hero2 from "../assets/hero-2.jpeg"
-import sofa1 from "../assets/sofa1.jpg"
-import sofa2 from "../assets/sofa2.jpg"
-import sofa3 from "../assets/sofa3.jpg"
-
 import { GiCompass, GiBatteredAxe } from 'react-icons/gi'
 import { TfiWrite } from 'react-icons/tfi'
+
+
 import Header from '../components/static/header'
 import Card from '../components/card'
 import useProductContext from '../customHook/productUseContext'
 import { useNavigate } from 'react-router-dom'
+import SimpleCard from '../components/static/simpleCard'
 
 
 const Home = () => {
@@ -64,33 +63,9 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-8 mt-20 flex-wrap justify-between'>
-                        <div className='card rounded bg-primary p-10 flex items-center flex-col lg:w-[30%] sm:w-[45%] gap-4'>
-                            <div className='h-[50px] w-[50px] rounded-full flex items-center justify-center bg-background1'>
-                                <GiCompass size={'25px'} />
-                            </div>
-                            <p className='font-bold text-[20px]'>
-                                Mission
-                            </p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis.</p>
-                        </div>
-                        <div className='card rounded bg-primary p-10 flex items-center flex-col lg:w-[30%] sm:w-[45%] gap-4'>
-                            <div className='h-[50px] w-[50px] rounded-full flex items-center justify-center bg-background1'>
-                                <GiBatteredAxe size={'25px'} />
-                            </div>
-                            <p className='font-bold text-[20px]'>
-                                Vision
-                            </p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis.</p>
-                        </div>
-                        <div className='card rounded bg-primary p-10 flex items-center flex-col lg:w-[30%] sm:w-[45%] gap-4'>
-                            <div className='h-[50px] w-[50px] rounded-full flex items-center justify-center bg-background1'>
-                                <TfiWrite size={'25px'} />
-                            </div>
-                            <p className='font-bold text-[20px]'>
-                                History
-                            </p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis.</p>
-                        </div>
+                        <SimpleCard icon={<GiCompass size={'25px'} />} type={"Mission"} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis."} />
+                        <SimpleCard icon={<GiBatteredAxe size={'25px'} />} type={"Vision"} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis."} />
+                        <SimpleCard icon={<TfiWrite size={'25px'} />} type={"History"} text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eligendi fugit excepturi ab? Commodi minus totam sint, sed cumque corporis."} />
                     </div>
                 </div>
             </section>
